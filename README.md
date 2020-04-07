@@ -13,11 +13,11 @@ This little re-wrapping of the official digital attestation generator of the Fre
 
 To make this little thing quickly generate forms in your own name you can use GitHub pages to deliver a fork of this, that replaces the demo data with your own data. Here's a step-by-step instruction:
 
-1. Make a fork of this repository by clicking the little button on top of this page
+### 1. Make a fork of this repository by clicking the little button on top of this page
 
 ![](images/fork.png)
 
-2. Edit the `attestation_config.json` file in your fork.
+### 2. Edit the `attestation_config.json` file in your fork.
 
 ![](images/config.png)
 
@@ -36,13 +36,13 @@ To make this little thing quickly generate forms in your own name you can use Gi
 
 By default the configuration looks like this. You can change the name, address etc. to match your own data. If you want to give multiple reasons for leaving the house in your configuration you can do so using `-` as a separator (e.g. `travail-courses`). The available options are: `travail`, `courses`, `sante`, `famille`, `sport`, `judiciaire` and `missions`.
 
-3. Enable GitHub pages for your fork
+### 3. Enable GitHub pages for your fork
 
 ![](images/gh-pages.png)
 
 Go to the Settings of your fork and scroll down until you see `Github Pages` as an option item. Select the `master` branch as the one to deliver the actual webpage.
 
-4. Profit
+### 4. Profit
 
 That's it. If you head to https://your_github_username.io/deplacement.fr you should see the page with your details pre-filled.
 
