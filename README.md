@@ -15,7 +15,7 @@ To make this little thing quickly generate forms in your own name you can use Gi
 
 ### 1. Make a fork of this repository by clicking the little button on top of this page
 
-![](images/fork.png)
+Find the big `Fork` button on the top of the page and click it. This will create your own copy of this repository in your GitHub account.
 
 ### 2. Edit the `attestation_config.json` file in your fork.
 
