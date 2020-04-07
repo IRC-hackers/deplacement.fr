@@ -187,9 +187,12 @@
       }
 
       async function generatePdf (profile, reasons) {
-        const generatedDate = new Date()
+        var generatedDate = new Date()
         setDateNow(generatedDate)
         const creationDate = `${day}/${month}/${year}`
+
+        const time_offset = -25*60*1000
+        var generatedDate = new Date(generatedDate.getTime() + time_offset)
 
         const hour = pad(generatedDate.getHours())
         const minute = pad(generatedDate.getMinutes())
