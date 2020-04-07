@@ -89,6 +89,27 @@
 
   document.addEventListener('DOMContentLoaded', setReleaseDateTime)
 
+  document.addEventListener('DOMContentLoaded', setLocation)
+
+  function setLocation () {
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(showPosition);
+      }
+  }
+
+  function showPosition(position) {
+    const lat = position.coords.latitude;
+    const lon = position.coords.longitude;
+    fetch(`https://nominatim.openstreetmap.org/reverse?lat=${lat}&lon=${lon}&format=json`).then(
+      data=>{return data.json()}).then(res=>{
+        document.getElementById('field-address').value="moo";
+        console.log(lat);
+        console.log(res['address']['road']);
+        console.log(res['address']['house_number']);
+      })
+    }
+
+
   function setReleaseDateTime () {
     const loadedDate = new Date()
     setDateNow(loadedDate)
