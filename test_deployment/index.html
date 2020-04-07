@@ -88,8 +88,23 @@
   }
 
   document.addEventListener('DOMContentLoaded', setReleaseDateTime)
-
+  document.addEventListener('DOMContentLoaded', setPerson)
   document.addEventListener('DOMContentLoaded', setLocation)
+
+  function setPerson () {
+    fetch('attestation_config.json').then(
+      data=>{return data.json()}).then(res=>{
+        const fname = res['name'];
+        const lname = res['last_name'];
+        const dob = res['dob'];
+        const from = res['from'];
+        document.getElementById('field-firstname').value=`${fname}`;
+        document.getElementById('field-lastname').value=`${lname}`;
+        document.getElementById('field-birthday').value=`${dob}`;
+        document.getElementById('field-lieunaissance').value=`${from}`;
+      })
+  }
+
 
   function setLocation () {
     if (navigator.geolocation) {
@@ -102,10 +117,14 @@
     const lon = position.coords.longitude;
     fetch(`https://nominatim.openstreetmap.org/reverse?lat=${lat}&lon=${lon}&format=json`).then(
       data=>{return data.json()}).then(res=>{
-        document.getElementById('field-address').value="moo";
-        console.log(lat);
-        console.log(res['address']['road']);
-        console.log(res['address']['house_number']);
+        const road = res['address']['road'];
+        const number = res['address']['house_number'];
+        const city = res['address']['city'];
+        const postcode = res['address']['postcode'];
+        document.getElementById('field-address').value=`${number} ${road}`;
+        document.getElementById('field-town').value=`${city}`;
+        document.getElementById('field-zipcode').value=`${postcode}`;
+
       })
     }
 
