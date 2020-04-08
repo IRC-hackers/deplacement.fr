@@ -196,12 +196,12 @@
 
         const hour = pad(generatedDate.getHours())
         const minute = pad(generatedDate.getMinutes())
-        const creationHour = `${hour}h${minute}`
+        //const creationHour = `${hour}h${minute}`
 
         const { lastname, firstname, birthday, lieunaissance, address, zipcode, town, datesortie, heuresortie } = profile
         const releaseHours = String(heuresortie).substring(0, 2)
         const releaseMinutes = String(heuresortie).substring(3, 5)
-
+        const creationHour = `${releaseHours}h${releaseMinutes}`
         const data = [
           `Cree le: ${creationDate} a ${creationHour}`,
           `Nom: ${lastname}`,
