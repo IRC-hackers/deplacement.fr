@@ -1,6 +1,6 @@
 # Living in France? Quickly make your own attestations to leave during COVID-19
 
-A very simple test deployment can be found at [on our GitHub page](https://cri-hackers.github.io/deplacement.fr/).
+A very simple test deployment can be found at [on our GitHub page](https://irc-hackers.github.io/deplacement.fr/).
 
 This little re-wrapping of the official digital attestation generator of the French government comes with a small set of useful features to make going out for grocery shopping easier in times of the lockdown:
 
